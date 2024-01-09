@@ -92,11 +92,3 @@ To get an instant stream link, just forward any media to the bot and boom, its f
 ![image](https://user-images.githubusercontent.com/88939380/145798095-3cdad108-96b0-4391-a540-cad144d6b864.png)
 
 
-### Channel Support
-Bot also Supported with Channels. Just add bot Channel as Admin. If any new file comes in Channel it will edit it with **Get Download Link** Button. </details>
-
-### Credits : 
-
-- [Adarsh Goel](https://github.com/adarsh-goel)
-- [Me For Fix Errors](https://github.com/itz-jeol)
-- Everyone In This Journey !
