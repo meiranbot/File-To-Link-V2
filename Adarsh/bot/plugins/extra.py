@@ -10,15 +10,18 @@ from Adarsh import StartTime
 #START_TEXT = """ Your Telegram DC Is : `{}`  """
 
 START_TEXT = """ **ʜᴇʟʟᴏ...⚡\n\nɪᴀᴍ ᴀ sɪᴍᴘʟᴇ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʟɪɴᴋ ᴀɴᴅ sᴛʀᴇᴀᴍ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ.**\n\n**ᴜsᴇ /help ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛsɪʟs\n\nsᴇɴᴅ ᴍᴇ ᴀɴʏ ᴠɪᴅᴇᴏ / ғɪʟᴇ ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀᴢ...**",
+
             reply_markup=InlineKeyboardMarkup(
-                [
+               [
+                  [
                     InlineKeyboardButton("⚡ UPDATES", url="https://t.me/OM_links"),
                     [InlineKeyboardButton("OWNER", url="https://t.me/OM_TG_V"),
                     InlineKeyboardButton("💌 SUBSCRIBE 💌", url="https://t.me/addlist/Vg8x_LRo-PEwYzc1")]
-                ]
+                  ]
+               ]
             ),
-            
-           disable_web_page_preview=True)"""
+                    
+                    disable_web_page_preview=True)"""
 
 
 @StreamBot.on_message(filters.regex("maintainers😎"))
@@ -61,7 +64,7 @@ async def follow_user(b,m):
                     disable_web_page_preview=True)
         
 
-@StreamBot.on_message(filters.regex("Start"))
+@StreamBot.on_message(filters.regex("start⚡️"))
 async def dc(bot, update):
     text = START_TEXT.format(update.from_user.dc_id)
     await update.reply_text(
@@ -74,7 +77,7 @@ async def dc(bot, update):
     
 @StreamBot.on_message(filters.command("list"))
 async def list(l, m):
-    LIST_MSG = "Hi! {} Here is a list of all my commands \n \n 1 . `Start` \n 2. `Help📚` \n 3.`Subscribe ❤️` \n 4. `ping📡` \n 5. `status📊` \n 6. `DC` this tells your telegram dc \n 7. `maintainers😎` "
+    LIST_MSG = "Hi! {} Here is a list of all my commands \n \n 1 . `start⚡️` \n 2. `Help📚` \n 3.`Subscribe ❤️` \n 4. `ping📡` \n 5. `status📊` \n 6. `DC` this tells your telegram dc \n 7. `maintainers😎` "
     await l.send_message(chat_id = m.chat.id,
         text = LIST_MSG.format(m.from_user.mention(style="md"))
         
