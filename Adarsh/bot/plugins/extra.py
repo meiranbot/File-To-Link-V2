@@ -7,10 +7,20 @@ from utils_bot import *
 from Adarsh import StartTime
 
 
-#START_TEXT = """ Your Telegram DC Is : `{}`  """
+DC_TEXT = """ Your Telegram DC Is : `{}`  """
 
-# START_TEXT = """ **ʜᴇʟʟᴏ...⚡\n\nɪᴀᴍ ᴀ sɪᴍᴘʟᴇ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʟɪɴᴋ ᴀɴᴅ sᴛʀᴇᴀᴍ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ.**\n\n**ᴜsᴇ /help ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛsɪʟs\n\nsᴇɴᴅ ᴍᴇ ᴀɴʏ ᴠɪᴅᴇᴏ / ғɪʟᴇ ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀᴢ...** """
+START_TEXT = """ **ʜᴇʟʟᴏ...⚡\n\nɪᴀᴍ ᴀ sɪᴍᴘʟᴇ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʟɪɴᴋ ᴀɴᴅ sᴛʀᴇᴀᴍ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ.**\n\n**ᴜsᴇ /help ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛsɪʟs\n\nsᴇɴᴅ ᴍᴇ ᴀɴʏ ᴠɪᴅᴇᴏ / ғɪʟᴇ ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀᴢ...** """
 
+
+
+@StreamBot.on_message(filters.regex("DC"))
+async def start(bot, update):
+    text = DC_TEXT.format(update.from_user.dc_id)
+    await update.reply_text(
+        text=text,
+        disable_web_page_preview=True,
+        quote=True
+    )
 
 @StreamBot.on_message(filters.regex("maintainers😎"))
 async def maintainers(b,m):
@@ -44,7 +54,7 @@ async def follow_user(b,m):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("SUBSCRIBE NEW", url=f"https://t.me/OM_links")
+                                InlineKeyboardButton("SUBSCRIBE NEW", url=f"https://t.me/addlist/Vg8x_LRo-PEwYzc1")
                             ]
                         ]
                     ),
@@ -52,40 +62,15 @@ async def follow_user(b,m):
                     disable_web_page_preview=True)
         
 
-# @StreamBot.on_message(filters.regex("start⚡️"))
-# async def dc(bot, update):
-#   text = START_TEXT.format(update.from_user.dc_id)
-#    await update.reply_text(
-#        text=text,
-#        reply_markup=InlineKeyboardMarkup(
-#               [
-           #       [
-             #       InlineKeyboardButton("⚡ UPDATES", url="https://t.me/OM_links"),
-              #      [InlineKeyboardButton("OWNER", url="https://t.me/OM_TG_V"),
-              #      InlineKeyboardButton("💌 SUBSCRIBE 💌", url="https://t.me/addlist/Vg8x_LRo-PEwYzc1")]
-               #   ]
-            #   ]
-        #    ),
-                    
-       # disable_web_page_preview=True,
-     #   quote=True
- #   )
-
 @StreamBot.on_message(filters.regex("start⚡️"))
-async def start(b, m):
-    start_t = time.time()
-    ag = await m.reply_text("**ʜᴇʟʟᴏ...⚡\n\nɪᴀᴍ ᴀ sɪᴍᴘʟᴇ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʟɪɴᴋ ᴀɴᴅ sᴛʀᴇᴀᴍ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ.**\n\n**ᴜsᴇ /help ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛsɪʟs\n\nsᴇɴᴅ ᴍᴇ ᴀɴʏ ᴠɪᴅᴇᴏ / ғɪʟᴇ ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀᴢ...**")
-            reply_markup=InlineKeyboardMarkup(
-               [
-                  [
-                     InlineKeyboardButton("⚡ UPDATES", url="https://t.me/OM_links"),
-                    [InlineKeyboardButton("OWNER", url="https://t.me/OM_TG_V"),
-                     InlineKeyboardButton("💌 SUBSCRIBE 💌", url="https://t.me/addlist/Vg8x_LRo-PEwYzc1")]
-                   ]
-                ]
-             ),
-                    
-        disable_web_page_preview=True)
+async def start(bot, update):
+    text = START_TEXT.format(update.from_user.dc_id)
+    await update.reply_text(
+        text=text,
+        disable_web_page_preview=True,
+        quote=True
+    )
+
 
     
 @StreamBot.on_message(filters.command("list"))
