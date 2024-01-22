@@ -9,6 +9,17 @@ from Adarsh import StartTime
 
 START_TEXT = """ Your Telegram DC Is : `{}`  """
 
+START_TXT = """ **ʜᴇʟʟᴏ...⚡\n\nɪᴀᴍ ᴀ sɪᴍᴘʟᴇ ᴛᴇʟᴇɢʀᴀᴍ ғɪʟᴇ/ᴠɪᴅᴇᴏ ᴛᴏ ᴘᴇʀᴍᴀɴᴇɴᴛ ʟɪɴᴋ ᴀɴᴅ sᴛʀᴇᴀᴍ ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴏʀ ʙᴏᴛ.**\n\n**ᴜsᴇ /help ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛsɪʟs\n\nsᴇɴᴅ ᴍᴇ ᴀɴʏ ᴠɪᴅᴇᴏ / ғɪʟᴇ ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀᴢ...**",
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    InlineKeyboardButton("⚡ UPDATES", url="https://t.me/OM_links"),
+                    [InlineKeyboardButton("OWNER", url="https://t.me/jeol_tg"),
+                    InlineKeyboardButton("💌 SUBSCRIBE 💌", url="https://youtube.com/@itzjeol")]
+                ]
+            ),
+            
+           disable_web_page_preview=True)"""
+
 
 @StreamBot.on_message(filters.regex("maintainers😎"))
 async def maintainers(b,m):
@@ -17,12 +28,12 @@ async def maintainers(b,m):
     except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="I am Coded By [Adarsh Goel](https://github.com/adarsh-goel)",
+                    text="I am Coded By [OM_links](https://t.me/OM_TG_V)",
                     
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("Developer💻", url=f"https://github.com/adarsh-goel")
+                                InlineKeyboardButton("Developer💻", url=f"https://t.me/OM_TG_V")
                             ]
                         ]
                     ),
@@ -30,19 +41,19 @@ async def maintainers(b,m):
                     disable_web_page_preview=True)
             
          
-@StreamBot.on_message(filters.regex("follow❤️"))
+@StreamBot.on_message(filters.regex("Subscribe ❤️"))
 async def follow_user(b,m):
     try:
        await b.send_message(chat_id=m.chat.id,text="HELLO",quote=True)
     except Exception:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="<B>HERE'S THE FOLLOW LINK</B>",
+                    text="<B>HERE'S THE SUBSCRIBE LINK</B>",
                     
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("FOLLOW ME", url=f"https://GITHUB.COM/adarsh-goel")
+                                InlineKeyboardButton("SUBSCRIBE NEW", url=f"https://t.me/OM_links")
                             ]
                         ]
                     ),
@@ -59,11 +70,18 @@ async def start(bot, update):
         quote=True
     )
 
-    
+    StreamBot.on_message(filters.regex("Start⚡️"))
+async def start(bot, update):
+    text = START_TXT.format(update.from_user.dc_id)
+    await update.reply_text(
+        text=text,
+        disable_web_page_preview=True,
+        quote=True
+    )
     
 @StreamBot.on_message(filters.command("list"))
 async def list(l, m):
-    LIST_MSG = "Hi! {} Here is a list of all my commands \n \n 1 . `start⚡️` \n 2. `help📚` \n 3. `login🔑` \n 4.`follow❤️` \n 5. `ping📡` \n 6. `status📊` \n 7. `DC` this tells your telegram dc \n 8. `maintainers😎` "
+    LIST_MSG = "Hi! {} Here is a list of all my commands \n \n 1 . `Start⚡️` \n 2. `Help📚` \n 3.`Subscribe ❤️` \n 4. `ping📡` \n 5. `status📊` \n 6. `DC` this tells your telegram dc \n 7. `maintainers😎` "
     await l.send_message(chat_id = m.chat.id,
         text = LIST_MSG.format(m.from_user.mention(style="md"))
         
