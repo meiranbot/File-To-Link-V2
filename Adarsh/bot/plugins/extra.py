@@ -69,9 +69,9 @@ async def start(bot, update):
         disable_web_page_preview=True,
         quote=True
     )
-
-    StreamBot.on_message(filters.regex("Start⚡️"))
-async def start(bot, update):
+            
+ @StreamBot.on_message(filters.regex("Start⚡️"))
+ async def start(bot, update):
     text = START_TXT.format(update.from_user.dc_id)
     await update.reply_text(
         text=text,
