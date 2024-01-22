@@ -13,8 +13,8 @@ START_TXT = """ **ʜᴇʟʟᴏ...⚡\n\nɪᴀᴍ ᴀ sɪᴍᴘʟᴇ ᴛᴇʟᴇ�
             reply_markup=InlineKeyboardMarkup(
                 [
                     InlineKeyboardButton("⚡ UPDATES", url="https://t.me/OM_links"),
-                    [InlineKeyboardButton("OWNER", url="https://t.me/jeol_tg"),
-                    InlineKeyboardButton("💌 SUBSCRIBE 💌", url="https://youtube.com/@itzjeol")]
+                    [InlineKeyboardButton("OWNER", url="https://t.me/OM_TG_V"),
+                    InlineKeyboardButton("💌 SUBSCRIBE 💌", url="https://t.me/addlist/Vg8x_LRo-PEwYzc1")]
                 ]
             ),
             
