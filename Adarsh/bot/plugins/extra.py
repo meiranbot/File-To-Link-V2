@@ -62,7 +62,7 @@ async def follow_user(b,m):
         
 
 @StreamBot.on_message(filters.regex("DC"))
-async def start(bot, update):
+async def dc(bot, update):
     text = START_TEXT.format(update.from_user.dc_id)
     await update.reply_text(
         text=text,
@@ -70,7 +70,7 @@ async def start(bot, update):
         quote=True
     )
             
- @StreamBot.on_message(filters.regex("Start⚡️"))
+ @StreamBot.on_message(filters.regex("start⚡️"))
  async def start(b, m):
     text = START_TXT.format(update.from_user.dc_id)
     await m.reply_text(
