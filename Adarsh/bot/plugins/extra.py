@@ -70,7 +70,7 @@ async def dc(bot, update):
         quote=True
     )
             
- @StreamBot.on_message(filters.regex("start⚡️"))
+ @StreamBot.on_message(filters.regex("start ⚡️"))
  async def start(b, m):
     text = START_TXT.format(update.from_user.dc_id)
     await m.reply_text(
@@ -81,7 +81,7 @@ async def dc(bot, update):
     
 @StreamBot.on_message(filters.command("list"))
 async def list(l, m):
-    LIST_MSG = "Hi! {} Here is a list of all my commands \n \n 1 . `Start⚡️` \n 2. `Help📚` \n 3.`Subscribe ❤️` \n 4. `ping📡` \n 5. `status📊` \n 6. `DC` this tells your telegram dc \n 7. `maintainers😎` "
+    LIST_MSG = "Hi! {} Here is a list of all my commands \n \n 1 . `Start ⚡️` \n 2. `Help📚` \n 3.`Subscribe ❤️` \n 4. `ping📡` \n 5. `status📊` \n 6. `DC` this tells your telegram dc \n 7. `maintainers😎` "
     await l.send_message(chat_id = m.chat.id,
         text = LIST_MSG.format(m.from_user.mention(style="md"))
         
